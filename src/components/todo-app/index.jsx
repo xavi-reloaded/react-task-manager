@@ -26,7 +26,8 @@ class TodoApp extends React.Component {
 	}
 
   render() {
-      return (
+		if (this.state.todos.length > 0) {
+			return (
 
 				<div id="todo" className="show" style={{opacity: this.state.todos.c}}>
 					<div className="pane todo-pane todo-list" style={{'max-height': this.state.todos.a }}>
@@ -43,7 +44,11 @@ class TodoApp extends React.Component {
 					<li className="placeholder" style={{display: this.state.todos.b}}></li>
 				</div>
 
-      )
+			)
+		} else {
+			return <p className="text-center">Loading...</p>
+		}
+
   }
 
 }
