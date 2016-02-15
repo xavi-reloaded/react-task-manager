@@ -7,7 +7,7 @@ class TodoApp extends React.Component {
   constructor(props) {
     super(props)
 		this.model = new TodoModel;
-		this.state = this.model.getState();
+		this.viewModel = this.model.getViewModel()
   }
 
 	componentWillMount() {
@@ -18,8 +18,8 @@ class TodoApp extends React.Component {
 		if (this.state.todos.length > 0) {
 			return (
 
-				<div id="todo" className="show" style={{opacity: this.state.todos.c}}>
-					<div className="pane todo-pane todo-list" style={{'max-height': this.state.todos.a }}>
+				<div id="todo" className="show" style={{opacity: this.viewModel.todos.c}}>
+					<div className="pane todo-pane todo-list" style={{'max-height': this.viewModel.todos.a }}>
 						<div className="todo-list-header">
 							<div id="todo-count">{this.state.todos.length + ' to do'}</div>
 						</div>
@@ -30,7 +30,7 @@ class TodoApp extends React.Component {
 					</div>
 					<span id="todo-remaining"></span>
 					<span className="toggle todo-toggle">Todo</span>
-					<li className="placeholder" style={{display: this.state.todos.b}}></li>
+					<li className="placeholder" style={{display: this.viewModel.todos.b}}></li>
 				</div>
 
 			)
