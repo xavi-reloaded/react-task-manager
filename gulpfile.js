@@ -8,13 +8,25 @@ var nib = require('nib')
 var minify = require('gulp-minify-css')
 
 gulp.task('server', function() {
-  gulp.src('./build')
+  gulp.src('./dist')
     .pipe(webserver({
       host: '0.0.0.0',
       port: 8080,
       fallback: 'index.html',
       livereload: true
     }))
+})
+
+gulp.task('build', function() {
+	browserify({
+		entries: './src/components/index.jsx',
+		extensions: ['.jsx'],
+		debug: true
+	})
+		.transform(babelify)
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest('./dist/js'))
 })
 
 gulp.task('stylus', function() {
@@ -24,19 +36,7 @@ gulp.task('stylus', function() {
       'include css': true,
     }))
     .pipe(minify())
-    .pipe(gulp.dest('./build/css/'))
-})
-
-gulp.task('build', function() {
-  browserify({
-    entries: './src/components/index.jsx',
-    extensions: ['.jsx'],
-    debug: true
-  })
-  .transform(babelify)
-  .bundle()
-  .pipe(source('bundle.js'))
-  .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./dist/css/'))
 })
 
 gulp.task('watch', function() {

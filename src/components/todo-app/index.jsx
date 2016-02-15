@@ -32,7 +32,7 @@ class TodoApp extends React.Component {
 				<div id="todo" className="show" style={{opacity: this.state.todos.c}}>
 					<div className="pane todo-pane todo-list" style={{'max-height': this.state.todos.a }}>
 						<div className="todo-list-header">
-							<div id="todo-count">{this.state.todos.length + ' things to do'}</div>
+							<div id="todo-count">{this.state.todos.length + ' to do'}</div>
 						</div>
 
 						<TodoList todos={this.state.todos} />
