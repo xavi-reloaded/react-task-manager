@@ -1,28 +1,17 @@
 import React from 'react'
 import TodoList from '../todo-list'
+import TodoModel from '../model'
 
 class TodoApp extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { todos: {a:'174px', b:'none', c:1} }
+		this.model = new TodoModel;
+		this.state = { todos: {a:'174px', b:'none', c:1} };
   }
 
 	componentWillMount() {
-		//fetch('http://myURL')
-		//  .then((response) => {
-		//    return response.json()
-		//  })
-		//  .then((empleados) => {
-		//    this.setState({ todos: todos })
-		//  })
-		let todos = [
-			{ id: 1, title: "Llamar a Pepito", active: true },
-			{ id: 2, title: "Reunión con Richard", active: true },
-			{ id: 3, title: "Estimar backlog", active: true },
-			{ id: 4, title: "Enviar email", active: true }
-		]
-		this.setState({ todos: todos });
+		this.setState({ todos: this.model.getTodos() });
 	}
 
   render() {

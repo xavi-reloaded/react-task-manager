@@ -19,7 +19,7 @@ gulp.task('server', function() {
 
 gulp.task('build', function() {
 	browserify({
-		entries: './src/components/index.jsx',
+		entries: './src/components/todo/index.jsx',
 		extensions: ['.jsx'],
 		debug: true
 	})
@@ -40,7 +40,7 @@ gulp.task('stylus', function() {
 })
 
 gulp.task('watch', function() {
-  gulp.watch('./src/components/**/*.jsx', ['build'])
+  gulp.watch('./src/components/todo/**/*.jsx', ['build'])
   gulp.watch(['./src/styles/**/*.styl', './src/components/**/*.styl'], ['stylus'])
 })
 
