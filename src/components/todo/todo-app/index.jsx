@@ -7,7 +7,7 @@ class TodoApp extends React.Component {
   constructor(props) {
     super(props)
 		this.model = new TodoModel;
-		this.state = { todos: {a:'174px', b:'none', c:1} };
+		this.state = this.model.getState();
   }
 
 	componentWillMount() {
