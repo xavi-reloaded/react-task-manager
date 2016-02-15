@@ -1,23 +1,21 @@
 import React from 'react'
 import TodoRow from '../todo-row'
 
-class EmpleadoList extends React.Component {
+class TodoList extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <ul className="media-list">
-          {
-            this.props.listado.map((empleado) => {
-              return <EmpleadoRow key={ empleado.id }
-                                  name={ empleado.fullName }
-                                  picture={ empleado.pic }
-                                  title={ empleado.title }
-                                  department={ empleado.department } />
-            })
-          }
-        </ul>
-      </div>
+			<ol>
+
+					{
+						this.props.todos.map((todo) => {
+							return <TodoRow key={ todo.id }
+																	title={ todo.title }
+																	active={ todo.active }/>
+						})
+					}
+
+			</ol>
     )
   }
 }

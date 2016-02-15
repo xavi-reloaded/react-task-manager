@@ -1,22 +1,19 @@
 import React from 'react'
 
-class EmpleadoRow extends React.Component {
+class TodoRow extends React.Component {
 
   render() {
     return(
-      <li className="media">
-        <EmpleadoAvatar picture={this.props.picture} />
-        <div className="media-body">
-          <h4>{this.props.name}</h4>
-          <p>
-            {this.props.title} &nbsp;
-            <span className="label label-info">{this.props.department}</span>
-          </p>
-        </div>
-        <hr/>
-      </li>
+			<li draggable="true">
+				<div className="view">
+					<a className="destroy">✕</a>
+					<label><input className="toggle" type="checkbox"/></label>
+					<span>{this.props.title}</span>
+				</div>
+				<input className="edit todo-input" type="text" value={this.props.title}/>
+			</li>
     )
   }
 }
 
-export default EmpleadoRow
+export default TodoRow

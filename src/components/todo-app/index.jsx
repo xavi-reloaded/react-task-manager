@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoList from '../todo-list'
 
 class TodoApp extends React.Component {
 
@@ -7,8 +8,22 @@ class TodoApp extends React.Component {
     this.state = { todos: {a:'174px', b:'none', c:1} }
   }
 
-  componentWillMount() {
-  }
+	componentWillMount() {
+		//fetch('http://myURL')
+		//  .then((response) => {
+		//    return response.json()
+		//  })
+		//  .then((empleados) => {
+		//    this.setState({ todos: todos })
+		//  })
+		let todos = [
+			{ id: 1, title: "Llamar a Pepito", active: true },
+			{ id: 2, title: "Reunión con Richard", active: true },
+			{ id: 3, title: "Estimar backlog", active: true },
+			{ id: 4, title: "Enviar email", active: true }
+		]
+		this.setState({ todos: todos });
+	}
 
   render() {
       return (
@@ -16,29 +31,11 @@ class TodoApp extends React.Component {
 				<div id="todo" className="show" style={{opacity: this.state.todos.c}}>
 					<div className="pane todo-pane todo-list" style={{'max-height': this.state.todos.a }}>
 						<div className="todo-list-header">
-							<div id="todo-count">2 things to do</div>
+							<div id="todo-count">{this.state.todos.length + ' things to do'}</div>
 						</div>
-						<ol>
 
-							<li draggable="true">
-								<div className="view">
-									<a className="destroy">✕</a>
-									<label><input className="toggle" type="checkbox"/></label>
-									<span>hello</span>
-								</div>
-								<input className="edit todo-input" type="text" value="hello"/>
-							</li>
+						<TodoList todos={this.state.todos} />
 
-							<li draggable="true">
-								<div className="view">
-									<a className="destroy">✕</a>
-									<label><input className="toggle" type="checkbox"/></label>
-									<span>yeah</span>
-								</div>
-								<input className="edit todo-input" type="text" value="yeah"/>
-							</li>
-
-						</ol>
 						<input id="todo-new" className="todo-input" type="text" placeholder="New todo"/>
 					</div>
 					<span id="todo-remaining"></span>

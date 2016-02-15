@@ -207,7 +207,7 @@ input { margin: 0; font-size: 100%; }
 	#todo { text-align: right; -webkit-user-select: none; user-select: none; }
 		.todo-toggle { padding: 20px; }
 
-	#todo .todo-list { position: relative; right: 3px; opacity: 0; height: 0; width: 300px; overflow-x: hidden; overflow-y: auto; text-align: left; -webkit-transition: all .2s ease; }
+	#todo .todo-list { position: relative; right: 3px; opacity: 0; height: 0; width: 600px; overflow-x: hidden; overflow-y: auto; text-align: left; -webkit-transition: all .2s ease; }
 
 	#todo a {  }
 
