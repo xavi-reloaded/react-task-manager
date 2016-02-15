@@ -1,6 +1,6 @@
 {
-  "name": "react-fetch",
-  "version": "1.0.0",
+  "name": "react-task-manager",
+  "version": "0.1.0",
   "description": "An example app in ReactJS, to educational purposes",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/carlosazaustre/n6ws"
+    "url": "https://github.com/xavi-reloaded/react-task-manager"
   },
   "keywords": [
     "es6",
@@ -16,28 +16,28 @@
     "javascript",
     "react"
   ],
-  "author": "Carlos Azaustre @carlosazaustre",
+  "author": "Xavi Hidalgo @xavi-reloaded",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/carlosazaustre/react-fetch"
+    "url": "https://github.com/xavi-reloaded/react-task-manager"
   },
-  "homepage": "https://github.com/carlosazaustre/react-fetch",
+  "homepage": "https://github.com/xavi-reloaded/react-task-manager",
   "devDependencies": {
-    "babelify": "^6.1.2",
-    "browserify": "^10.2.4",
-    "gulp": "^3.9.0",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylus": "^2.0.4",
-    "gulp-webserver": "^0.9.1",
-    "http-server": "^0.8.0",
+		"browserify": "^10.2.4",
+		"babelify": "^6.1.2",
+		"gulp-minify-css": "^1.1.6",
+		"gulp": "^3.9.0",
+		"gulp-webserver": "^0.9.1",
+		"gulp-sourcemaps": "^1.5.2",
+		"http-server": "^0.8.0",
+		"gulp-stylus": "^2.0.4",
     "nib": "^1.1.0",
-    "standard": "^4.2.1",
-    "vinyl-source-stream": "^1.1.0"
-  },
+    "vinyl-source-stream": "^1.1.0",
+		"standard": "^4.2.1"
+	},
   "dependencies": {
-    "font-awesome": "^4.3.0",
-    "normalize.css": "^3.0.3",
-    "react": "^0.13.3"
+		"react": "^0.13.3",
+		"normalize.css": "^3.0.3",
+		"font-awesome": "^4.3.0"
   }
 }
